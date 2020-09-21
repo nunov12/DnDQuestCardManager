@@ -1,0 +1,156 @@
+$BLACK:                 #000000
+$BLUE:                  #0000FF
+$GREEN:                 #00FF00
+$RED:                   #FF0000
+$WHITE:                 #FFFFFF
+$GREY:                  #232323
+$ORANGE:                #FF992B
+$TEAL:                  #4EDECF
+
+$OUTSIDE-PADDING:       5%
+
+$CARD-HEIGHT:           500px
+$CARD-WIDTH:            350px
+$IMG-RATIO:             0.4
+$IMG-HEIGHT:            40%
+$IMG-FLEX:              50%
+$BODY-HEIGHT:           100% - $IMG-HEIGHT
+$BODY-FLEX:             100% - $IMG-FLEX
+
+
+*
+    margin:             0
+    padding:            0
+    flex-basis:         0
+    cursor:             default
+
+head
+    display:            none
+
+body
+    background-color:   $GREY
+    height:             100vh
+    width:              100vw
+    display:            inline-flex
+    align-content:      flex-start
+    flex-wrap:          nowrap
+    justify-content:    center
+    align-items:        center
+
+.card
+    background-color:   $WHITE
+    height:             $CARD-HEIGHT
+    overflow:           hidden
+    position:           relative
+    display:            inline-flex
+    align-content:      flex-start
+    flex-basis:         $CARD-WIDTH
+    flex-wrap:          nowrap
+    &:hover
+        .card_header
+            height:     $IMG-FLEX + 30%
+        .card_body
+            height:     $BODY-FLEX
+        .card_name
+            height:     25%
+        img
+            transform:  translatey(15px) translatex(-30px) scale(1.20)
+
+.card > div
+    transition:         cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms
+
+.card_header
+    height:             $IMG-HEIGHT + 10%
+    width:              auto
+    overflow:           hidden
+    margin:             -5%
+    position:           absolute
+    top:                0
+    img
+        top: 0
+        max-width:      120%
+        transition:     ease-in-out 0.4s
+
+.card_body
+    height:             $BODY-HEIGHT
+    width:              100%
+    position:           absolute
+    bottom:             0
+    display:            inline-flex
+    align-content:      flex-start
+    flex-wrap:          nowrap
+    justify-content:    space-evenly
+    align-items:        center
+
+.card_name
+    background-color:   $ORANGE
+    flex:               none
+    height:             20%
+    width:              100%
+    position:           absolute
+    top:                0
+    z-index:            1000
+    transition:         linear 0.4s
+
+.card_stats
+    height:             40%
+    width:              100%
+    position:           absolute
+    bottom:             40%
+    overflow:           hidden
+    display:            flex
+    align-content:      center
+    flex-wrap:          nowrap
+    justify-content:    space-evenly
+    align-items:        center
+    z-index:            500
+
+.card_stats > div
+    height:             100%
+    flex-basis:         15%
+    display:            inline-flex
+    justify-content:    center
+    align-items:        center
+    position:           relative
+
+.stat_name
+    position:           absolute
+    z-index:            1
+    bottom:             30%
+
+.stat_value
+    position:           absolute
+    z-index:            2
+    bottom:             10%
+
+.card_infos
+    height:             40%
+    width:              100%
+    position:           absolute
+    padding-left:       5%
+    padding-right:      5%
+    bottom:             0
+    overflow:           hidden
+    display:            flex
+    align-content:      center
+    flex-wrap:          nowrap
+    justify-content:    space-evenly
+    align-items:        center
+
+.card_infos > div
+    height:             100%
+    flex-basis:         15%
+    display:            inline-flex
+    justify-content:    space-evenly
+    align-items:        center
+    position:           relative
+
+.info_name
+    position:           absolute
+    z-index:            1
+    bottom:             60%
+
+.info_value
+    position:           absolute
+    z-index:            2
+    bottom:             40%
